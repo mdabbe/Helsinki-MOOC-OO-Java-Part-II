@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="week12-week12_49.wormgame" default="all">
+  
+  
+  <property file="week12-week12_49.wormgame.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.klib"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.zip"/>
+    <include name="*.ane"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <fileset dir="${javac2.home}">
+      <include name="javac2.jar"/>
+      <include name="jdom.jar"/>
+      <include name="asm-all*.jar"/>
+      <include name="forms-*.jar"/>
+    </fileset>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module week12-week12_49.WormGame -->
+  
+  <dirname property="module.week12-week12_49.wormgame.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.week12-week12_49.wormgame" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.week12-week12_49.wormgame" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.week12-week12_49.wormgame" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.week12-week12_49.wormgame" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="week12-week12_49.wormgame.output.dir" value="${module.week12-week12_49.wormgame.basedir}/Out/production/week12-week12_49.WormGame"/>
+  <property name="week12-week12_49.wormgame.testoutput.dir" value="${module.week12-week12_49.wormgame.basedir}/Out/test/week12-week12_49.WormGame"/>
+  
+  <path id="week12-week12_49.wormgame.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="week12-week12_49.wormgame.module.production.classpath">
+    <path refid="${module.jdk.classpath.week12-week12_49.wormgame}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="week12-week12_49.wormgame.runtime.production.module.classpath">
+    <pathelement location="${week12-week12_49.wormgame.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="week12-week12_49.wormgame.module.classpath">
+    <path refid="${module.jdk.classpath.week12-week12_49.wormgame}"/>
+    <pathelement location="${week12-week12_49.wormgame.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="week12-week12_49.wormgame.runtime.module.classpath">
+    <pathelement location="${week12-week12_49.wormgame.testoutput.dir}"/>
+    <pathelement location="${week12-week12_49.wormgame.output.dir}"/>
+    <fileset dir="${basedir}/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.week12-week12_49.wormgame">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.week12-week12_49.wormgame">
+    <patternset refid="excluded.from.module.week12-week12_49.wormgame"/>
+  </patternset>
+  
+  <path id="week12-week12_49.wormgame.module.sourcepath">
+    <dirset dir="${module.week12-week12_49.wormgame.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  <path id="week12-week12_49.wormgame.module.test.sourcepath">
+    <dirset dir="${module.week12-week12_49.wormgame.basedir}">
+      <include name="test"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.week12-week12_49.wormgame" depends="compile.module.week12-week12_49.wormgame.production,compile.module.week12-week12_49.wormgame.tests" description="Compile module week12-week12_49.WormGame"/>
+  
+  <target name="compile.module.week12-week12_49.wormgame.production" depends="register.custom.compilers" description="Compile module week12-week12_49.WormGame; production classes">
+    <mkdir dir="${week12-week12_49.wormgame.output.dir}"/>
+    <javac2 destdir="${week12-week12_49.wormgame.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.week12-week12_49.wormgame}/javac">
+      <compilerarg line="${compiler.args.week12-week12_49.wormgame}"/>
+      <bootclasspath refid="week12-week12_49.wormgame.module.bootclasspath"/>
+      <classpath refid="week12-week12_49.wormgame.module.production.classpath"/>
+      <src refid="week12-week12_49.wormgame.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.week12-week12_49.wormgame"/>
+    </javac2>
+    
+    <copy todir="${week12-week12_49.wormgame.output.dir}">
+      <fileset dir="${module.week12-week12_49.wormgame.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.week12-week12_49.wormgame.tests" depends="register.custom.compilers,compile.module.week12-week12_49.wormgame.production" description="compile module week12-week12_49.WormGame; test classes" unless="skip.tests">
+    <mkdir dir="${week12-week12_49.wormgame.testoutput.dir}"/>
+    <javac2 destdir="${week12-week12_49.wormgame.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.week12-week12_49.wormgame}/javac">
+      <compilerarg line="${compiler.args.week12-week12_49.wormgame}"/>
+      <bootclasspath refid="week12-week12_49.wormgame.module.bootclasspath"/>
+      <classpath refid="week12-week12_49.wormgame.module.classpath"/>
+      <src refid="week12-week12_49.wormgame.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.week12-week12_49.wormgame"/>
+    </javac2>
+    
+    <copy todir="${week12-week12_49.wormgame.testoutput.dir}">
+      <fileset dir="${module.week12-week12_49.wormgame.basedir}/test">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.week12-week12_49.wormgame" description="cleanup module">
+    <delete dir="${week12-week12_49.wormgame.output.dir}"/>
+    <delete dir="${week12-week12_49.wormgame.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.week12-week12_49.wormgame" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.week12-week12_49.wormgame" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>
